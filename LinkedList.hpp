@@ -103,7 +103,7 @@ public:
 		}
 	}
 
-	void Clear() {
+	void clear() {
 		Node* curr = head;
 		while (curr != nullptr) {
 			Node* next = curr->next;
@@ -120,7 +120,7 @@ public:
 		if (this == &other) {
 			return *this;
 		}
-		Clear();
+		clear();
 		head = other.head;
 		tail = other.tail;
 		count = other.count;
@@ -134,7 +134,7 @@ public:
 		if (this == &rhs) {
 			return *this;
 		}
-		Clear();
+		clear();
 		Node* curr = rhs.head;
 		while (curr != nullptr) {
 			addTail(curr->data);
