@@ -15,7 +15,7 @@ public:
 
     // Insertion
     void enqueue(const T& item) override {
-        list.addTail(item);
+        list.AddTail(item);
     }
 
     // Deletion
@@ -24,7 +24,7 @@ public:
             throw std::out_of_range("");
         }
         T tail = list.getHead()->data;
-        list.removeHead();
+        list.RemoveHead();
         return tail;
     }
 

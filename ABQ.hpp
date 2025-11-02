@@ -58,7 +58,7 @@ public:
         return *this;
 
     }
-    ~ABQ() noexcept override {
+    ~ABQ() noexcept {
         delete[] array_;
         capacity_ = 0;
         curr_size_ = 0;

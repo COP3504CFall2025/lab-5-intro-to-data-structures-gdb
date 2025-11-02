@@ -51,7 +51,7 @@ public:
         rhs.capacity_ = 0;
         return *this;
     }
-    ~ABS() noexcept override {
+    ~ABS() noexcept {
         delete[] array_;
         curr_size_ = 0;
         capacity_ = 0;

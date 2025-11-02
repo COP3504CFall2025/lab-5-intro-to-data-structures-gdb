@@ -68,7 +68,7 @@ public:
         return *this;
     
     }
-    ~ABDQ() override {
+    ~ABDQ() {
         delete[] data_;
         capacity_ = 0;
         size_ = 0;
