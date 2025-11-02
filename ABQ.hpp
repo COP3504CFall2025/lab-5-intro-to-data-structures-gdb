@@ -108,7 +108,7 @@ public:
             array_[i - 1] = array_[i];
         }
         curr_size_--;
-        if (curr_size_ <= (capacity_ / 4) && curr_size_ > 0) {
+        if (curr_size_ <= (capacity_ / 4) && capacity > 1) {
             capacity_ /= 2;
             if (capacity_ == 0) {
                 capacity_ = 1;

@@ -100,7 +100,7 @@ public:
         }
         curr_size_--;
         T data = array_[curr_size_];
-        if (curr_size_ <= (capacity_ / 4) && curr_size_ > 0) {
+        if (curr_size_ <= (capacity_ / 4) && capacity_ > 1) {
             capacity_ /= 2;
             if (capacity_ == 0) {
                 capacity_ = 1;
