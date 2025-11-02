@@ -108,6 +108,15 @@ public:
             array_[i - 1] = array_[i];
         }
         curr_size_--;
+        if (curr_size_ == (capacity_ / 2)) {
+            capacity_ /= 2;
+            T* data2 = new T[capacity_];
+            for (size_t i = 0; i < curr_size_; i++) {
+                data2[i] = array_[i];
+            }
+            delete[] array_;
+            array_ = data2;
+        }
         return front;
     }
 

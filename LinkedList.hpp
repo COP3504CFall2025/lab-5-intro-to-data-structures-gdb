@@ -13,7 +13,7 @@ public:
 		Node* next;
 	};
 	// Behaviors
-	void PrintForward() const {
+	void printForward() const {
 		Node* curr = head;
 		while (curr != nullptr) {
 			std::cout << curr->data << std::endl;
