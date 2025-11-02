@@ -15,7 +15,7 @@ public:
 
     // Insertion
     void push(const T& item) override {
-        list.addHead(item);
+        list.AddHead(item);
     }
 
     // Deletion
@@ -24,7 +24,7 @@ public:
             throw std::runtime_error("");
         }
         T head = list.getHead()->data;
-        list.removeHead();
+        list.RemoveHead();
         return head;
     }
 

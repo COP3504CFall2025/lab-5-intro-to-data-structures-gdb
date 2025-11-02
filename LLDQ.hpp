@@ -19,10 +19,10 @@ public:
 
     // Core Insertion Operations
     void pushFront(const T& item) override {
-        list.addHead(item);
+        list.AddHead(item);
     }
     void pushBack(const T& item) override {
-        list.addTail(item);
+        list.AddTail(item);
     }
 
     // Core Removal Operations
@@ -31,7 +31,7 @@ public:
             throw std::runtime_error("");
         }
         T head = list.getHead()->data;
-        list.removeHead();
+        list.RemoveHead();
         return head;
     }
     T popBack() override {
@@ -39,7 +39,7 @@ public:
             throw std::runtime_error("");
         }
         T tail = list.getTail()->data;
-        list.removeTail();
+        list.RemoveTail();
         return tail;
     }
 
