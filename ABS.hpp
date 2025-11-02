@@ -99,8 +99,12 @@ public:
             throw std::runtime_error("");
         }
         curr_size_--;
-        if (curr_size_ == (capacity_ / 2)) {
+        T data = array_[curr_size_];
+        if (curr_size_ <= (capacity_ / 4) && curr_size_ > 0) {
             capacity_ /= 2;
+            if (capacity_ == 0) {
+                capacity_ = 1;
+            }
             T* data2 = new T[capacity_];
             for (size_t i = 0; i < curr_size_; i++) {
                 data2[i] = array_[i];
@@ -108,7 +112,7 @@ public:
             delete[] array_;
             array_ = data2;
         }
-        return array_[curr_size_];
+        return data;
     }
 
 private:

@@ -108,8 +108,11 @@ public:
             array_[i - 1] = array_[i];
         }
         curr_size_--;
-        if (curr_size_ == (capacity_ / 2)) {
+        if (curr_size_ <= (capacity_ / 4) && curr_size_ > 0) {
             capacity_ /= 2;
+            if (capacity_ == 0) {
+                capacity_ = 1;
+            }
             T* data2 = new T[capacity_];
             for (size_t i = 0; i < curr_size_; i++) {
                 data2[i] = array_[i];
