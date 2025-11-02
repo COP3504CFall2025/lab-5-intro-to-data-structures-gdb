@@ -86,6 +86,8 @@ public:
             }
             delete[] data_;
             data_ = data2;
+            front_ = 0;
+            back_ = size_;
         }
         front_ = (front_ - 1 + capacity_) % capacity_;
         size_++;
@@ -100,6 +102,8 @@ public:
             }
             delete[] data_;
             data_ = data2;
+            front_ = 0;
+            back_ = size_;
         }
         data_[back_] = item;
         back_ = (back_ + 1) % capacity_;
@@ -109,7 +113,7 @@ public:
     // Deletion
     T popFront() override {
         if (size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         T data = data_[front_];
         front_ = (front_ + 1) % capacity_;
@@ -118,7 +122,7 @@ public:
     }
     T popBack() override {
         if (size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         back_ = (back_ - 1 + capacity_) % capacity_;
         size_--;
@@ -128,13 +132,13 @@ public:
     // Access
     const T& front() const override {
         if (size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return data_[front_];
     }
     const T& back() const override {
         if (size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return data_[(back_ - 1 + capacity_) % capacity_];
     }

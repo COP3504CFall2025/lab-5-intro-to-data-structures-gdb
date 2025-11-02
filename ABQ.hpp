@@ -93,7 +93,7 @@ public:
     // Access
     T peek() const override {
         if (curr_size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return array_[0];
     }
@@ -101,7 +101,7 @@ public:
     // Deletion
     T dequeue() override {
         if (curr_size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         T front = array_[0];
         for (size_t i = 1; i < curr_size_; i++) {

@@ -89,14 +89,14 @@ public:
 
     T peek() const override {
         if (curr_size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return array_[curr_size_ - 1];
     }
 
     T pop() override {
         if (curr_size_ == 0) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         curr_size_--;
         return array_[curr_size_];

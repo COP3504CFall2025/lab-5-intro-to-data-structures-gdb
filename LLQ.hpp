@@ -21,7 +21,7 @@ public:
     // Deletion
     T dequeue() override {
         if (!list.getHead()) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         T tail = list.getHead()->data;
         list.RemoveHead();
@@ -31,7 +31,7 @@ public:
     // Access
     T peek() const override {
         if (!list.getHead()) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return list.getHead()->data;
     }

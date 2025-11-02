@@ -28,7 +28,7 @@ public:
     // Core Removal Operations
     T popFront() override {
         if (!list.getHead()) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         T head = list.getHead()->data;
         list.RemoveHead();
@@ -36,7 +36,7 @@ public:
     }
     T popBack() override {
         if (!list.getTail()) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         T tail = list.getTail()->data;
         list.RemoveTail();
@@ -46,13 +46,13 @@ public:
     // Element Accessors
     const T& front() const override {
         if (!list.getHead()) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return list.getHead()->data;
     }
     const T& back() const override {
         if (!list.getTail()) {
-            throw std::out_of_range("");
+            throw std::runtime_error("");
         }
         return list.getTail()->data;
     }
